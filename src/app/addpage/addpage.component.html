@@ -1,0 +1,72 @@
+<div class="adjust">
+  Add New Item
+  <div class="container">
+    <div class="leftside">
+      <div class="form-field">
+        <label>Item Name:</label>
+        <input type="text" name="" placeholder="Enter item name here..." [(ngModel)]="itemName"/>
+      </div>
+      <div class="form-field">
+        <label>Item Description:</label>
+        <textarea
+          [(ngModel)]="itemDescription"
+          maxlength="200"
+          v-model="description"
+          rows="5"
+          cols="30"
+          name=""
+          placeholder="Description of item goes here..."
+        ></textarea>
+      </div>
+      <div class="form-field">
+        <label>Item Price:</label>
+        <input type="number" name="price" placeholder="Enter price here.." [(ngModel)]="itemPrice"/>
+      </div>
+      <div class="form-field">
+        <label>Item Quantity:</label>
+        <input
+          [(ngModel)]="itemQuantity"
+          type="number"
+          name="quantity"
+          placeholder="Enter Quantity here.."
+        />
+      </div>
+      <div class="form-field">
+        <label>Location:</label>
+        <input type="text" name="location" placeholder="Location of item..." [(ngModel)]="itemLocation"/>
+      </div>
+      <div class="buttons">
+        <button class="btnc">Cancel</button>
+        <button class="btns" (click)="onSubmit()">Submit</button>
+      </div>
+      <div class="form-field-cat">
+        <label>Category:</label>
+        <select [(ngModel)]="itemCategory">
+          <option>Vegetables</option>
+          <option>Fruits</option>
+          <option>Rice</option>
+          <option>Dairy</option>
+        </select>
+      </div>
+    </div>
+    <div class="rightside">
+      <img
+        *ngIf="selectedFile != null"
+        [src]="imageUrl"
+        class="upimg"
+        height="200px"
+        width="200px"
+      />
+      <input
+        *ngIf="selectedFile == null"
+        type="file"
+        accept=".jpg, .jpeg, .png"
+        (change)="onFileSelected($event)"
+      />
+      <div *ngIf="selectedFile == null" class="heading">
+        UPLOAD ITEM IMAGE HERE
+      </div>
+      <button *ngIf="selectedFile!=null" class="button" (click)="changeImage()">Change Image</button>
+    </div>
+  </div>
+</div>

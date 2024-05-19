@@ -1,6 +1,42 @@
-<app-header></app-header>
-<app-carousel-slider></app-carousel-slider>
-
+<div [ngClass]="'nav-bar'">
+  <div [style]="'font-size: 28px'">FARM2CART</div>
+  <!-- <div>
+    <input
+      type="text"
+      placeholder="Search products here"
+      [ngClass]="'search'"
+    />
+  </div> -->
+  <div class="search-container">
+    <input
+      type="text"
+      placeholder="Search products here"
+      [ngClass]="'search'"
+    />
+    <button mat-icon-button aria-label="Search">
+      <mat-icon [style]="'color:black'">search</mat-icon>
+    </button>
+  </div>
+  <div ngClass="nav-bar__items">
+    <a routerLink="Addproducts">
+      <button class="btn">Add Items</button>
+    </a>
+    <button mat-icon-button aria-label="Cart">
+      <mat-icon>shopping_cart</mat-icon>
+      <div class="notification-dot">{{ cartItemCount }}</div>
+    </button>
+    <button mat-icon-button aria-label="Like">
+      <mat-icon>favorite_filled</mat-icon>
+    </button>
+    <button mat-icon-button aria-label="Profile" (click)="openLoginDialog()">
+      <mat-icon>person</mat-icon>
+    </button>
+    <div *ngIf="login()">
+      {{user}}
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
 <!-- <form (submit)="onSubmit()">
   <input
     type="text"

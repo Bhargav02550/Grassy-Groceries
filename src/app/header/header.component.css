@@ -1,7 +1,7 @@
 .nav-bar{
     height: 50px;
     padding:1%;
-    background-color: #639918;
+    background-color: rgb(99, 153, 24);
     color:white;
     display:flex;
     flex-direction: row;

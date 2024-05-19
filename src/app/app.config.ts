@@ -16,6 +16,8 @@ const firebaseConfig = {
   appId: '1:796028775979:web:380413f74febd1968b446e',
 };
 
+
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
@@ -23,6 +25,6 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom([
       provideFirebaseApp(() => initializeApp(firebaseConfig)),
       provideStorage(() => getStorage()),
-    ]), provideAnimationsAsync(),
+    ]), provideAnimationsAsync(), provideAnimationsAsync(),
   ],
 };

@@ -1,0 +1,220 @@
+.adjust{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100svh - 100px);
+    align-items: center;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+    width: 1000px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    /* box-shadow: black 0px 9px 22px -20px; */
+    border: 1px solid  #d4d6d6;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.leftside{
+    gap:5px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: calc(100% - 20px);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: rgb(236, 236, 236);
+    margin: 10px 0px 10px 10px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.rightside{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: calc(100% - 20px);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin: 10px 10px 10px 0px;
+    background-color: #B2C791;
+    box-sizing: border-box;;
+}
+
+input[type = 'file']{
+    position: relative;
+    padding: 0.9375rem;
+    color: black;
+    background-color: #e5e5e5a1;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+input::-webkit-file-upload-button{
+    font-family: poppins ;
+    padding: 0.625rem 0.9375rem 0.625rem;
+    color: black;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.form-field{
+    width: 315px;
+    display:flex;
+    flex-direction: column;;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.form-field input{
+    font-size: 10px;
+    height: 30px;
+    width: 300px;
+    background-color: #f6f7fa;
+    font-size: 13px;
+    color: black;
+    border: 1px solid #fcfcfc;
+    border-radius: 2.5px;
+    padding-left: 5px;
+}
+
+.form-field-cat{
+    display: flex;
+    flex-direction: row;
+    gap:5px;
+    align-items: flex-end;
+}
+
+.form-field-cat option{
+    border: none;
+}
+
+.form-field input::placeholder{
+    font-size: 12px;
+}
+
+.form-field input:not(:focus) {
+    outline: none;
+}
+
+.form-field input:focus {
+    outline: 1px solid #B2C791;
+    box-shadow: 0 0 3px rgba(178, 199, 145, 0.7); 
+}
+
+.form-field textarea {
+    font-size: 12px;
+    width: 300px;
+    height: 150px; 
+    padding-left: 5px;
+    border: 1px solid #fcfcfc;
+    border-radius: 2.5px;
+    background-color: #f6f7fa;
+    resize: none; 
+}
+.form-field textarea::placeholder {
+    font-size: 12px;
+}
+
+.form-field textarea:focus {
+    outline: none; 
+    border-color: #B2C791; 
+    box-shadow: 0 0 3px rgba(178, 199, 145, 0.7); 
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+/* Style the dropdown list */
+select {
+    font-size: 13px;
+    height: 30px;
+    border: 1px solid #fcfcfc;
+    border-radius: 4px;
+    background-color: white;
+    /* appearance: none; */
+    /* -webkit-appearance: none; Remove default arrow on Firefox */
+    /* background-image: url('data:image/svg+xml;utf8,<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>'); */
+    background-repeat: no-repeat;
+    background-position: right 8px center; 
+}
+
+select:focus{
+    outline: 1px solid #B2C791;
+    box-shadow: 0 0 3px rgba(178, 199, 145, 0.7);
+}
+select option {
+    font-size: 12px;
+    padding: 8px;
+    
+}
+
+.upimg{
+    
+    border-radius: 10px;
+    border: 1px solid #e5e5e5;
+}
+
+.heading{
+    padding-top: 10px;
+    font-size: 18px;
+    font-weight: bolder;
+    color: black;
+}
+
+.button{
+    height: 30px;
+    width: 200px;
+    border: 1px solid #d4d6d6;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btns{
+    height: 30px;
+    width: 48%;
+    border-radius: 2.5px;
+    background-color:green;
+    color: white;
+    border:none;
+    outline:none;
+    cursor: pointer;
+}
+
+.btnc{
+    height: 30px;
+    width: 48%;
+    border-radius: 2.5px;
+    background-color:rgb(199, 71, 71);
+    color: white;
+    border:none;
+    outline:none;
+    cursor: pointer;
+}
+
+.buttons{
+    padding-top: 5px;
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}

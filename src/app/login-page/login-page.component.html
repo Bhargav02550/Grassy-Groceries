@@ -1,0 +1,25 @@
+<mat-dialog-content>
+  <div class="border">
+    <div class="login">
+      <div></div>
+      <div class="login-card">
+        <img src="/assets/Login.png" alt="" height="450" width="450" />
+        <div class="leftside">
+          <div class="form-field">
+            <label>Email address</label>
+            <input type="text" placeholder="example@mail.com" [(ngModel)]="email"/>
+          </div>
+          <div class="form-field">
+            <label>Password</label>
+            <input type="password" placeholder="************" [(ngModel)]="password"/>
+          </div>
+          <div class="buttons">
+            <button class="btnr">Register</button>
+            <button class="btnl" (click)="login()">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="register"></div>
+  </div>
+</mat-dialog-content>

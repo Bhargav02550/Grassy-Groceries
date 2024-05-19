@@ -1,19 +1,36 @@
 import { Component, NgModule } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { UploadService } from './upload.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgModel } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { CarouselSliderComponent } from './carousel-slider/carousel-slider.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   standalone: true,
-  imports: [HeaderComponent, FormsModule, RouterOutlet, CommonModule, CarouselSliderComponent],
+  imports: [
+    HeaderComponent,
+    FormsModule,
+    RouterOutlet,
+    CommonModule,
+    CarouselSliderComponent,
+    MatButtonModule,
+    MatIconModule,
+    MatInputModule,
+    RouterLink,
+  ],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  cartItemCount: number = 5;
+
   title = 'Grocery-App';
   itemName: string = '';
   itemPrice: number = 0;
@@ -21,8 +38,13 @@ export class AppComponent {
   itemCategory: string = '';
   imageUrl: string | ArrayBuffer | null = null;
   selectedFile: File | null = null;
+  user:string = '';
+  // login: boolean = this.uploadService.isloggedin;
 
-  constructor(private uploadService: UploadService) {}
+  constructor(
+    private uploadService: UploadService,
+    private dialog: MatDialog
+  ) {}
 
   onFileSelected(event: any) {
     this.selectedFile = event.target.files[0];
@@ -64,4 +86,24 @@ export class AppComponent {
       }
     );
   }
+  showlogin() {}
+  openLoginDialog(): void {
+    const dialogRef = this.dialog.open(LoginPageComponent, {
+      width: '1000px',
+      height: '500px',
+      panelClass: '',
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      // console.log(this.login);
+      // console.log('The login dialog was closed');
+    });
+  }
+
+  login(): any {
+    this.user = this.uploadService.username;
+    // console.log(this.uploadService.username);
+    return this.uploadService.isloggedin;
+  }
+
 }

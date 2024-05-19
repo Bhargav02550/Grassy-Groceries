@@ -1,0 +1,19 @@
+<div class="main">
+  <div class="leftside">leftside</div>
+  <div class="rightside">
+    <div *ngFor="let item of items">
+        <!-- <h1>{{item.itemImage}}</h1> -->
+      <div class="product-card">
+        <img
+          [src]="getImageData(item.itemImage)"
+          alt="Product Image"
+          class="product-image"
+        />
+        <div class="product-details">
+          <h3 class="product-name">Product Name</h3>
+          <p class="product-price">$19.99</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
