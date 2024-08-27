@@ -8,7 +8,6 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyB5m_4HNcQcEH00eznnwreuEBgu4mEtkk4',
   authDomain: 'mean-stack-91fce.firebaseapp.com',
   projectId: 'mean-stack-91fce',
   storageBucket: 'mean-stack-91fce.appspot.com',
